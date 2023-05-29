@@ -1,0 +1,34 @@
+{% extends 'resume/base.html' %}
+{% load static %}
+
+{% block content %}
+<main class="container">
+    <div class="row text-center justify-content-center pt-2">
+        <div class="col-md-5 col-sm-6">
+            <p class="text-end fs-1 text-light bg-dark rounded p-2 text-break">Dima Pugach <br> Python Developer <br> 31.10.2003 <br> МRC </p>
+            <p class="text-start mt-2 bg-dark rounded text-light p-2">jhkjh</p>
+        </div>
+        <div class="col-lg-3 col-sm-4 float-end">
+            <img src="{% static 'resume/images/20230301151235_IMG_6820 (1)-01 (1).jpeg' %}" alt="Photo of me" class="img-fluid rounded">
+            <div class="row text-center">
+                <p class="pt-2 text-start col-4" > 
+                    <a href="https://www.linkedin.com/in/dima-pugach-2009741bb/" class="nav-link">
+                        <img src="{% static 'resume/images/LinkedIn.png.webp' %}" alt="linkedin" srcset="" class="img-fluid">
+                    </a> 
+                </p>
+                <p class="pt-2 text-start col-4"> 
+                    <a href="https://github.com/fckscl/" class="nav-link">
+                        <img src="{% static 'resume/images/github.png' %}" alt="linkedin" srcset="" class="img-fluid">
+                    </a> 
+                </p>
+                <p class="pt-2 text-start col-4"> 
+                    <a href="https://github.com/fckscl/" class="nav-link">
+                        <img src="{% static 'resume/images/mail.png' %}" alt="linkedin" srcset="" class="img-fluid">
+                    </a> 
+                </p>
+            </div>
+        </div>
+    </div>
+</main>
+
+{% endblock content %}

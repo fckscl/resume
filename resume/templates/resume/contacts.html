@@ -1,0 +1,40 @@
+{% extends 'resume/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <h1>Контакты</h1>
+    <div class="row">
+    <div class="col-md-4">
+        <h2>Адрес</h2>
+        <p>1234 улица, город, страна</p>
+    </div>
+    <div class="col-md-4">
+        <h2>Телефон</h2>
+        <p>+7 (123) 456-7890</p>
+    </div>
+    <div class="col-md-4">
+        <h2>Email</h2>
+        <p>example@example.com</p>
+    </div>
+    </div>
+    <hr>
+    <h2>Форма обратной связи</h2>
+    <form action="/send_message" method="post">
+    {% csrf_token %}
+    <div class="form-group">
+        <label for="name">Имя:</label>
+        <input type="text" class="form-control" id="name" name="name" required>
+    </div>
+    <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" class="form-control" id="email" name="email" required>
+    </div>
+    <div class="form-group">
+        <label for="message">Сообщение:</label>
+        <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Отправить</button>
+    </form>
+</div>
+{% endblock content%}
