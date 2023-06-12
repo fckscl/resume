@@ -12,17 +12,25 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 from pathlib import Path
 import os
-import dj_database_url
+import environ
+
+# Создание объекта environ, загружающего переменные окружения
+env = environ.Env()
+
+# Загрузка переменных окружения из файла .env
+env.read_env()
+
+# import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY')
+SECRET_KEY = env('SECRET_KEY')
+# print(os.environ)
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'RENDER' not in os.environ
@@ -76,15 +84,17 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'resume_pda.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
-    'default': dj_database_url.config(
-        engine='django.db.backends.sqlite3',
-        default=os.environ.get('db_source')
-    )
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        # 'NAME': 'dihwuxvj',
+        # 'USER': 'dihwuxvj',
+        # 'PASSWORD': os.environ.get('db_password'),
+        'HOST': env('db_source'),
+    }
 }
 
 # Password validation
