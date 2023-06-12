@@ -90,9 +90,9 @@ WSGI_APPLICATION = 'resume_pda.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        # 'NAME': 'dihwuxvj',
-        # 'USER': 'dihwuxvj',
-        # 'PASSWORD': os.environ.get('db_password'),
+        'NAME': 'dihwuxvj',
+        'USER': 'dihwuxvj',
+        'PASSWORD': env('db_password'),
         'HOST': env('db_source'),
     }
 }
