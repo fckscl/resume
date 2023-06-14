@@ -2,7 +2,16 @@ from django.shortcuts import render
 
 # Create your views here.
 def index(request):
-    return render(request, 'resume/index.html', {'title' : 'Pugach'})
+    skills = [
+        ['Python', 4],
+        ['Django', 3],
+        ['English', 3],
+        ['Data Science', 2],
+        ['Unity', 0]
+    ]
+    return render(request, 'resume/index.html', 
+                  {'title': 'Pugach',
+                   'skills': skills})
 
 def projects(request):
     return render(request, 'resume/projects.html', {'title' : 'Projects'})

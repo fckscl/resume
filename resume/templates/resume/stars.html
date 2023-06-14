@@ -1,0 +1,12 @@
+{% load static%}
+{% for i in range %}
+    {% if i < difficulty %}
+    <div class="col-1">
+        <img src="{% static 'resume/images/Photokako-shade-h6JObV8DRwrZbvQs (1).png' %}" alt="Filled star" class="img-fluid bg-light">
+    </div>
+    {% else %}
+    <div class="col-1">
+        <img src="{% static 'resume/images/Black-Vector-Star-PNG-HD-Quality.png' %}" alt="Empty star" class="img-fluid bg-light">
+    </div>
+    {% endif %}
+{% endfor %}
