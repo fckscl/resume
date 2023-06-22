@@ -1,17 +1,18 @@
 {% extends 'resume/base.html' %}
 {% load static %}
 {% load tags %}
+{% load i18n %}
 
 {% block content %}
 <link rel="stylesheet" href="{% static 'resume/css/style.css' %}">
 <main class="container">
     <div class="row text-center justify-content-center pt-2">
         <div class="col-md-8 col-sm-6">
-            <p class="text-end fs-1 text-light bg-dark rounded p-2 text-break">Dima Pugach <br> Python Developer <br> 31.10.2003 <br> МRC </p>
+            <p class="text-end fs-1 text-light bg-dark rounded p-2 text-break">Dima Pugach <br> Python Developer <br> 31.10.2003 <br> {% trans 'Text to translate'%} </p>
             <div class="justify-content-center mt-2 bg-dark rounded text-light p-2">
                 <!-- <div class="col-9 text-justify"> -->
                 {% for i in skills %}
-                <div class="row text-end m-2">
+                <div class="d-flex justify-content-center m-2">
                         {% difficulty i.1 %}
                     <!-- <div class="text-end"> -->
                         {{ i.0 }}
